@@ -79,3 +79,16 @@ body {
 /* Appear on scroll */
 .mil-up{opacity:0;transform:translateY(40px) scale(.98);transition:transform .4s cubic-bezier(0,0,.3642,1),opacity .4s cubic-bezier(0,0,.3642,1)}
 .mil-inview{opacity:1;transform:translateY(0) scale(1)}
+
+/* Responsive parity with source */
+@media screen and (max-width: 1400px){
+  .mil-position-2{display:none}
+  .mil-position-3{display:none}
+}
+@media screen and (max-width: 992px){
+  .mil-lines-place .mil-lines{display:none}
+}
+
+/* Animation delays per source */
+.mil-position-2 .mil-dodecahedron{-webkit-animation-delay:.5s;animation-delay:.5s}
+.mil-position-3 .mil-dodecahedron{-webkit-animation-delay:1s;animation-delay:1s}
