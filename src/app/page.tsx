@@ -27,7 +27,8 @@ function useScrollAnimations() {
           const from = parse(el, "data-value-1", 1);
           const to = parse(el, "data-value-2", 1);
           const current = from + (to - from) * progress;
-          el.style.transform = `scale(${current})`;
+          const factor = window.innerWidth <= 1024 ? 0.88 : 1;
+          el.style.transform = `scale(${current * factor})`;
         }
         ticking = false;
       });
