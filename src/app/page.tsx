@@ -6,9 +6,8 @@ function useScrollAnimations() {
   useEffect(() => {
     const scaleEls = Array.from(document.querySelectorAll<HTMLElement>(".ash-scale"));
 
-    const parse = (el: HTMLElement, name: string, fallback: number) => {
-      const v = el.getAttribute(name);
-      if (!v) return fallback;
+    const getVar = (el: HTMLElement, name: string, fallback: number) => {
+      const v = getComputedStyle(el).getPropertyValue(name).trim();
       const n = Number(v);
       return Number.isFinite(n) ? n : fallback;
     };
@@ -24,8 +23,8 @@ function useScrollAnimations() {
           const start = vh; // when element bottom reaches viewport top
           const end = -rect.height; // when element top passes viewport bottom
           const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
-          const from = parse(el, "data-value-1", 1);
-          const to = parse(el, "data-value-2", 1);
+          const from = getVar(el, "--from", 1);
+          const to = getVar(el, "--to", 1);
           const current = from + (to - from) * progress;
           const factor = window.innerWidth <= 1024 ? 0.88 : 1;
           el.style.transform = `scale(${current * factor})`;
@@ -84,13 +83,13 @@ export default function Home() {
       <section className="ash-banner ash-dark-bg relative">
         <div className="mi-invert-fix">
           <div className="ash-animation-frame">
-            <div className="ash-animation ash-position-1 ash-scale" data-value-1="7" data-value-2="1.6">
+            <div className="ash-animation ash-position-1 ash-scale" style={{ ["--from" as any]: 7, ["--to" as any]: 1.6 }}>
               <Dodecahedron />
             </div>
-            <div className="ash-animation ash-position-2 ash-scale" data-value-1="4" data-value-2="1">
+            <div className="ash-animation ash-position-2 ash-scale" style={{ ["--from" as any]: 4, ["--to" as any]: 1 }}>
               <Dodecahedron />
             </div>
-            <div className="ash-animation ash-position-3 ash-scale" data-value-1="1.2" data-value-2="0.1">
+            <div className="ash-animation ash-position-3 ash-scale" style={{ ["--from" as any]: 1.2, ["--to" as any]: 0.1 }}>
               <Dodecahedron />
             </div>
           </div>
