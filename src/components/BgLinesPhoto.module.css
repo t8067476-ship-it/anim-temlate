@@ -1,0 +1,14 @@
+.aboutPhoto{position:relative}
+.linesPlace{position:absolute;top:-120px;left:-27%}
+.lines{opacity:.05;pointer-events:none}
+.lines path,.lines rect,.lines line{stroke:rgb(0,0,0)}
+.move{-webkit-animation:move 10s linear infinite;animation:move 10s linear infinite}
+@-webkit-keyframes move{from{-webkit-transform:translateY(-75px)}50%{-webkit-transform:translateY(75px)}to{-webkit-transform:translateY(-75px)}}
+@keyframes move{from{transform:translateY(-75px)}50%{transform:translateY(75px)}to{transform:translateY(-75px)}}
+@media screen and (max-width:992px){.lines{display:none}}
+
+.imgFrame{position:relative;overflow:hidden;width:100%;padding-bottom:160%}
+.imgFrame img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center}
+
+.up{opacity:0;transform:translateY(40px) scale(.98);transition:transform .4s cubic-bezier(0,0,.3642,1),opacity .4s cubic-bezier(0,0,.3642,1)}
+.inview{opacity:1;transform:translateY(0) scale(1)}

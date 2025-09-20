@@ -1,0 +1,50 @@
+.banner{height:100vh}
+.darkBg{position:relative}
+.darkBg:before{content:"";width:100%;height:100%;position:absolute;pointer-events:none;z-index:2;-webkit-backdrop-filter:invert(100%);backdrop-filter:invert(100%)}
+.invertFix{height:100%;position:relative;pointer-events:none;z-index:3}
+
+.animationFrame{width:100%;height:100vh;position:absolute;top:0;-webkit-animation:jump 10s linear infinite;animation:jump 10s linear infinite;pointer-events:none}
+.animation{position:absolute;display:inline-block;width:300px;height:300px;opacity:.2;pointer-events:none;will-change:transform}
+.position1{top:100px;right:100px}
+.position1 .pentagon div{border-top:.1px solid rgb(255,255,255)}
+.position2{top:-60px;left:15%}
+.position2 .pentagon div{border-top:1px solid rgb(255,255,255)}
+.position3{bottom:-100px;right:35%}
+.position3 .pentagon div{border-top:1px solid rgb(255,255,255)}
+
+.dodecahedron{position:relative;left:100px;top:40px;width:100px;height:223px;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;-webkit-animation:rotate 100s infinite linear;animation:rotate 100s infinite linear}
+.pentagon{position:absolute;width:100px}
+.pentagon:nth-child(1){-webkit-transform:rotateY(.2turn) translateZ(69px) rotateX(26.5deg);transform:rotateY(.2turn) translateZ(69px) rotateX(26.5deg)}
+.pentagon:nth-child(6){bottom:0;-webkit-transform:rotateY(.2turn) translateZ(-69px) rotateX(206.5deg);transform:rotateY(.2turn) translateZ(-69px) rotateX(206.5deg)}
+.pentagon:nth-child(2){-webkit-transform:rotateY(.4turn) translateZ(69px) rotateX(26.5deg);transform:rotateY(.4turn) translateZ(69px) rotateX(26.5deg)}
+.pentagon:nth-child(7){bottom:0;-webkit-transform:rotateY(.4turn) translateZ(-69px) rotateX(206.5deg);transform:rotateY(.4turn) translateZ(-69px) rotateX(206.5deg)}
+.pentagon:nth-child(3){-webkit-transform:rotateY(.6turn) translateZ(69px) rotateX(26.5deg);transform:rotateY(.6turn) translateZ(69px) rotateX(26.5deg)}
+.pentagon:nth-child(8){bottom:0;-webkit-transform:rotateY(.6turn) translateZ(-69px) rotateX(206.5deg);transform:rotateY(.6turn) translateZ(-69px) rotateX(206.5deg)}
+.pentagon:nth-child(4){-webkit-transform:rotateY(.8turn) translateZ(69px) rotateX(26.5deg);transform:rotateY(.8turn) translateZ(69px) rotateX(26.5deg)}
+.pentagon:nth-child(9){bottom:0;-webkit-transform:rotateY(.8turn) translateZ(-69px) rotateX(206.5deg);transform:rotateY(.8turn) translateZ(-69px) rotateX(206.5deg)}
+.pentagon:nth-child(5){-webkit-transform:rotateY(1turn) translateZ(69px) rotateX(26.5deg);transform:rotateY(1turn) translateZ(69px) rotateX(26.5deg)}
+.pentagon:nth-child(10){bottom:0;-webkit-transform:rotateY(1turn) translateZ(-69px) rotateX(206.5deg);transform:rotateY(1turn) translateZ(-69px) rotateX(206.5deg)}
+.pentagon:nth-child(11){-webkit-transform:translateZ(69px) rotateX(-90deg);transform:translateZ(69px) rotateX(-90deg)}
+.pentagon:nth-child(12){bottom:0;-webkit-transform:translateZ(-69px) rotateX(90deg);transform:translateZ(-69px) rotateX(90deg)}
+.pentagon div{position:absolute;width:100px;height:69px;-webkit-transform-origin:bottom;transform-origin:bottom}
+.pentagon div:nth-child(1){-webkit-transform:rotate(.2turn);transform:rotate(.2turn)}
+.pentagon div:nth-child(2){-webkit-transform:rotate(.4turn);transform:rotate(.4turn)}
+.pentagon div:nth-child(3){-webkit-transform:rotate(.6turn);transform:rotate(.6turn)}
+.pentagon div:nth-child(4){-webkit-transform:rotate(.8turn);transform:rotate(.8turn)}
+.pentagon div:nth-child(5){-webkit-transform:rotate(1turn);transform:rotate(1turn)}
+.scale{}
+
+@-webkit-keyframes rotate{from{-webkit-transform:rotateX(0) rotateY(360deg) rotateZ(360deg)}to{-webkit-transform:rotateX(360deg) rotateY(0) rotateZ(-360deg)}}
+@keyframes rotate{from{transform:rotateX(0) rotateY(360deg) rotateZ(360deg)}to{transform:rotateX(360deg) rotateY(0) rotateZ(-360deg)}}
+@-webkit-keyframes jump{0%{-webkit-transform:translateY(-30px)}50%{-webkit-transform:translateY(30px)}100%{-webkit-transform:translateY(-30px)}}
+@keyframes jump{0%{transform:translateY(-30px)}50%{transform:translateY(30px)}100%{transform:translateY(-30px)}}
+
+/* Responsive parity */
+@media screen and (max-width:1400px){
+  .position2{display:none}
+  .position3{display:none}
+}
+
+/* Animation delays */
+.position2 .dodecahedron{-webkit-animation-delay:.5s;animation-delay:.5s}
+.position3 .dodecahedron{-webkit-animation-delay:1s;animation-delay:1s}
