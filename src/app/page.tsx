@@ -11,8 +11,8 @@ export default function Home() {
         <BgDodecahedron />
         <div className="absolute inset-0 z-10 flex items-end sm:items-center justify-center">
           <div className="max-w-screen-xl w-full px-4 pb-12 sm:pb-0">
-            <h1 className="text-3xl sm:text-4xl font-medium">Креативное пространство</h1>
-            <p className="mt-3 text-base sm:text-lg max-w-xl">Мы создаём выразительные цифровые решения, соединяя дизайн, технологию и внимание к деталям.</p>
+            <h1 className="text-3xl sm:text-4xl font-medium text-white drop-shadow">Креативное пространство</h1>
+            <p className="mt-3 text-base sm:text-lg max-w-xl text-white/90 drop-shadow">Мы создаём выразительные цифровые решения, соединяя дизайн, технологию и внимание к деталям.</p>
           </div>
         </div>
       </section>
